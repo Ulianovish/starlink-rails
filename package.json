@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@rails/webpacker": "5.4.3",
+    "apollo-boost": "^0.4.9",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "geojson": "^0.5.0",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^18.2.0",
+    "webpack": "4.46.0",
+    "webpack-cli": "3.3.12"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "3"
+  }
+}

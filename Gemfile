@@ -10,8 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
+gem 'pg'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -46,6 +45,7 @@ gem 'graphql'
 gem "rest-client"
 gem "ffi"
 gem "byebug"
+gem 'rack-cors'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -76,3 +76,7 @@ group :test do
   gem "webdrivers"
 end
 gem "graphiql-rails", group: :development
+
+gem "webpacker", "~> 5.4"
+
+gem "haversine", "~> 0.3.2"
