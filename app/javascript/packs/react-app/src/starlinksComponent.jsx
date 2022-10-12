@@ -10,6 +10,8 @@ const Starlinks = () => {
     const [variables, setVariables] = useState({
         latitude: 11.11111,
         longitude: 11.11111,
+        maxHeight: 1000,
+        minHeight: 50,
         amount: 20
     })
     console.log(places)
@@ -27,6 +29,8 @@ const Starlinks = () => {
                 variables: {
                     latitude: Number(variables.latitude),
                     longitude: Number(variables.longitude),
+                    maxHeight: Number(variables.maxHeight),
+                    minHeight: Number(variables.minHeight),
                     amount: Number(variables.amount)
                 }
             });
@@ -46,7 +50,7 @@ const Starlinks = () => {
 
     const submitForm = (event) => {
         event.preventDefault();
-        if (variables.latitude === '' || variables.longitude === '' || variables.amount === '' ) {
+        if (variables.latitude === '' || variables.longitude === '' || variables.amount === '' || variables.maxHeight === '' || variables.minHeight === ''  ) {
             return;
         }
         getStarlinks();
@@ -72,6 +76,24 @@ const Starlinks = () => {
                 step="any"
                 onKeyDown={ (evt) => evt.key === 'e' && evt.preventDefault() }
             />
+            <label htmlFor="minHeight">minimun Height</label>
+            <input
+                name="minHeight"
+                value={variables.minHeight}
+                onChange={updateState}
+                type='number'
+                step="any"
+                onKeyDown={ (evt) => evt.key === 'e' && evt.preventDefault() }
+            />
+            <label htmlFor="maxHeight">maximun Height</label>
+            <input
+                name="maxHeight"
+                value={variables.maxHeight}
+                onChange={updateState}
+                type='number'
+                step="any"
+                onKeyDown={ (evt) => evt.key === 'e' && evt.preventDefault() }
+            />
             <label htmlFor="longitude">number of satellites</label>
             <input
                 name="amount"
@@ -80,7 +102,7 @@ const Starlinks = () => {
                 type='number'
                 min="1"
             />
-            <button type='submit'>enviar</button>
+            <button type='submit'>send</button>
         </form>
         <Globe
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"

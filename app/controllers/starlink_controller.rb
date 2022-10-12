@@ -9,7 +9,8 @@ class StarlinkController < ApplicationController
       {
         :name => starlink["spaceTrack"]["OBJECT_NAME"],
         :latitude => starlink["latitude"],
-        :longitude => starlink["longitude"]
+        :longitude => starlink["longitude"],
+        :height_km => starlink["height_km"]
       }
     end.compact
     render json: positions

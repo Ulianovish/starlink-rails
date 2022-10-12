@@ -18,11 +18,12 @@ export const GET_ALL_STARLINKS = gql`
 `
 // get near starlinks
 export const GET_NEAR_STARLINKS = gql`
-  query nearStarlinks($latitude: Float!, $longitude: Float!, $amount: Int!) {
-    nearStarlinks(latitude: $latitude, longitude: $longitude, amount: $amount){
+  query nearStarlinks($latitude: Float!, $longitude: Float!,$maxHeight: Float!, $minHeight: Float!, $amount: Int!) {
+    nearStarlinks(latitude: $latitude, longitude: $longitude, maxHeight: $maxHeight, minHeight: $minHeight, amount: $amount){
         id
         latitude
         longitude
+        heightKm
         name
     }
   }

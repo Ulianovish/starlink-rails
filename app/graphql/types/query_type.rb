@@ -21,6 +21,8 @@ module Types
       description "Returns a list of near Starlinks"
       argument :latitude, Float, required: true
       argument :longitude, Float, required: true
+      argument :max_height, Float, required: true
+      argument :min_height, Float, required: true
       argument :amount, Int, required: true
     end
 
@@ -28,8 +30,8 @@ module Types
       Starlink.all
     end
 
-    def near_starlinks(latitude:, longitude:, amount:)
-      Starlink.nearStarlinks(latitude: latitude,longitude: longitude,amount: amount-1)
+    def near_starlinks(latitude:, longitude:, max_height:, min_height:,  amount:)
+      Starlink.nearStarlinks(latitude: latitude,longitude: longitude,max_height: max_height, min_height: min_height,amount: amount-1)
     end
   end
 end
